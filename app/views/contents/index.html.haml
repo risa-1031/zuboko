@@ -1,0 +1,38 @@
+-# = javascript_pack_tag 'autoReload'
+
+- if user_signed_in?
+.user_nav-grid-6
+  .user-info
+    = link_to "ログアウト", destroy_user_session_path, method: :delete
+    = link_to "グループメンバー管理", new_group_path
+
+
+- else
+  = link_to  new_user_registration_path
+
+
+-# = form_with url: search_group_contents_path , local: true, method: :get, class: "search-form" do |form|
+-#   = form.text_field :keyword, placeholder: "投稿を検索する", class: 'search-input'
+-#   = form.submit "検索", class: 'search-btn'
+
+-# .search-info
+-# - @contents.each do |content|
+-#   .info-list
+-#   - binding.pry
+-#     = content.text
+  
+-#     = content.created_at
+
+
+-# .footer
+-#   = form_with model: [@group, @content],remote: true, local: true do |f|
+-#     .form-text
+-#       = f.text_field :text, class: 'text-input', placeholder: "食材を登録する"
+-#       = f.label :image, class: 'input-image' do
+-#         = icon('far', 'image', class: 'icon1')
+-#         = f.file_field :image, class: 'input-none'
+-#     = f.submit 'Send', class: 'send-put'
+
+
+-# .wrapper
+-#   = render partial: "main", locals: { content: @content }
